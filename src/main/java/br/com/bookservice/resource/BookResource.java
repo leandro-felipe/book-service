@@ -33,7 +33,7 @@ public class BookResource {
 		}
 
 		var cambio = cambioProxy.getCambio(book.getPrice(), "USD", currency);
-		book.setEnvironment(port);
+		book.setEnvironment("Book PORT: " + port + "Cambio PORT" + cambio.getEnvironment());
 		book.setPrice(cambio.getConvertedValue());
 		return book;
 	}
